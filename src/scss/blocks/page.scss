@@ -1,0 +1,18 @@
+.page {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.page__body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-first;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: $basic-white;
+  background-color: red;
+  overflow-x: hidden;
+
+  min-height: 100%;
+}
