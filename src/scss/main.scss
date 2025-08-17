@@ -1,9 +1,9 @@
 // global
-@import "./global/normalize.scss";
-@import "./global/variables.scss";
-@import "./global/mixins.scss";
-@import "./global/fonts.scss";
-@import "./global/visually-hidden.scss";
+@use "./global/reset.scss";
+@use "./global/variables.scss";
+@use "./global/mixins.scss";
+@use "./global/fonts.scss";
+@use "./global/visually-hidden.scss";
 //blocks
-@import "./blocks/page.scss";
-@import "./blocks/header.scss";
+@use "./blocks/page.scss";
+@use "./blocks/header.scss";

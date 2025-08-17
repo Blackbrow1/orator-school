@@ -1,3 +1,5 @@
-@include font-template("Roboto", 400, normal, url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff"));
-@include font-template("Roboto", 300, normal, url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff"));
-@include font-template("Roboto", 700, normal, url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff"));
+@use './mixins' as m;
+
+@include m.font-template("Roboto", 400, normal, url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff"));
+@include m.font-template("Roboto", 300, normal, url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff"));
+@include m.font-template("Roboto", 700, normal, url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff"));
