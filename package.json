@@ -37,9 +37,13 @@
     "gulp-terser": "^2.1.0",
     "gulp-ttf2woff2": "^5.0.0",
     "gulp-webp": "^5.0.0",
+    "postcss-scss": "^4.0.9",
     "sass": "^1.89.2",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
+    "stylelint": "^16.24.0",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-config-standard-scss": "^16.0.0",
     "webpack-stream": "^7.0.0"
   }
 }
