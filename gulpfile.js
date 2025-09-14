@@ -15,9 +15,10 @@ import cleanCss from 'gulp-clean-css';
 import shorthand from 'gulp-shorthand';
 import newer from 'gulp-newer';
 import webp from 'gulp-webp';
+import imagemin, {mozjpeg, optipng} from 'gulp-imagemin';
 // import fonter from 'gulp-fonter';
 // import ttf2woff2 from 'gulp-ttf2woff2';
-import terser from 'gulp-terser';
+// import terser from 'gulp-terser';
 import { stacksvg } from 'gulp-stacksvg';
 import svgo from 'gulp-svgmin';
 import webpack from 'webpack-stream';
@@ -31,9 +32,14 @@ const sass = gulpSass(dartSass);
 const PATH_TO_SRC = './src/';
 const PATH_TO_DIST = './dist/';
 const PATH_TO_RAW = './raw/';
+const PATH_TO_ASSETS = './assets/';
+// const PATHS_TO_STATIC = [
+//   `${PATH_TO_SRC}favicons/*.{png,svg}`,
+//   `!${PATH_TO_SRC}img/icons/**/*`
+// ];
+
 const PATHS_TO_STATIC = [
-  `${PATH_TO_SRC}favicons/*.{png,svg}`,
-  `!${PATH_TO_SRC}img/icons/**/*`
+  `${PATH_TO_ASSETS}**/*`
 ];
 
 export function html() {
@@ -93,6 +99,10 @@ export function images() {
     }))
   }))
   .pipe(newer(`${PATH_TO_DIST}img`))
+  .pipe(imagemin([
+    mozjpeg({quality: 75, progressive: true}),
+	  optipng({optimizationLevel: 5})
+  ]))
   .pipe(dest(`${PATH_TO_DIST}img/`))
   .pipe(src(`${PATH_TO_SRC}img/**/*.{jpg,jpeg,png,gif,svg}`, { encoding: false }))
   .pipe(newer(`${PATH_TO_DIST}img`))
@@ -101,7 +111,7 @@ export function images() {
 }
 
 export function fonts() {
-  return src(`${PATH_TO_SRC}fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`)
+  return src(`${PATH_TO_SRC}fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`, { encoding: false })
   .pipe(plumber({
     errorHandler: notify.onError(error => ({
         title: 'FONTS',
@@ -113,7 +123,7 @@ export function fonts() {
 }
 
 export function scripts() {
-  return src(`${PATH_TO_SRC}js/*.js`)
+  return src(`${PATH_TO_SRC}js/**/*.js`)
   .pipe(babel())
   .pipe(webpack(webpackConfig))
   // .pipe(terser())
@@ -134,7 +144,8 @@ export function createStack () {
 }
 
 export function copyAssets () {
-  return src(PATHS_TO_STATIC, { base: PATH_TO_SRC })
+  return src(PATHS_TO_STATIC)
+    .pipe(newer(PATH_TO_DIST))
     .pipe(dest(PATH_TO_DIST));
 }
 
@@ -152,7 +163,7 @@ export function watcher() {
   watch(`${PATH_TO_SRC}scss/**/*.scss`, series(styles));
   watch(`${PATH_TO_SRC}img/**/*.{jpg,jpeg,png,gif,svg}`, series(images));
   watch(`${PATH_TO_SRC}fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`, series(fonts));
-  watch(`${PATH_TO_SRC}js/*.js`, series(scripts));
+  watch(`${PATH_TO_SRC}js/**/*.js`, series(scripts));
   watch(`${PATH_TO_SRC}img/icons/**/*.svg`, series(createStack, reloadServer));
   watch(PATHS_TO_STATIC, series(copyAssets, reloadServer));
 };

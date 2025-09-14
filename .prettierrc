@@ -1,0 +1,9 @@
+{
+  "printWidth": 100,
+  "htmlWhitespaceSensitivity": "ignore",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "singleAttributePerLine": false,
+  "proseWrap": "never"
+}
