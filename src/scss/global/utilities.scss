@@ -1,0 +1,15 @@
+@use "./variables.scss" as v;
+
+.accent-color {
+  color: v.$accent-color;
+}
+
+.h2 {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.h3 {
+  font-size: 22px;
+  line-height: 1;
+}
