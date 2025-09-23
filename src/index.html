@@ -9,11 +9,11 @@
   <body class="page__body">
     <header class="header">
       <div class="header__wrap">
-        <div class="header__logo-container">
+        <a href="#" class="header__logo-container">
           <svg class="header__logo" viewBox="0 0 172 50" width="172" height="50">
             <use href="/img/icons/stack.svg#logo-header"></use>
           </svg>
-        </div>
+        </a>
 
         <nav class="header__nav">
           <ul class="header__nav-list">
@@ -23,8 +23,9 @@
             <li class="header__nav-item">Контакты</li>
           </ul>
 
-          <button class="header__nav-button" type="button">
+          <button class="header__nav-button header__nav-button--opened" type="button">
             <span class="visually-hidden">Открыть меню</span>
+            <span class="header__nav-button-line" aria-label="Средняя линия меню"></span>
           </button>
         </nav>
 
@@ -38,15 +39,18 @@
     <main>
       <section class="hero">
         <div class="hero__wrap">
-          <h1 class="hero__title">Раскройте силу своего голоса</h1>
+          <h1 class="hero__title">
+            Раскройте силу своего
+            <span class="accent-color">голоса</span>
+          </h1>
 
           <p class="hero__description">
             Научитесь говорить так, чтобы вас слушали, запоминали и вдохновлялись. Курсы ораторского
             искусства и спикеров в Санкт-Петербурге для тех, кто хочет покорять аудиторию с первой
-            фразы. Выдаём сертификат
+            фразы. <br><span class="hero__description-accent">Выдаём сертификат</span>
           </p>
 
-          <a href="#" class="hero__link">Записаться на курс</a>
+          <a href="#" class="hero__button button">Записаться на курс</a>
 
           <div class="hero__img-block">
             <picture>
@@ -97,7 +101,7 @@
             </picture>
           </div>
 
-          <div class="hero__start-group">Старт ближайшей группы: 25 сентября</div>
+          <div class="hero__start-group">Старт ближайшей группы: <br>25 сентября</div>
 
           <div class="hero__groups">Мини-группы, до 12 человек</div>
         </div>

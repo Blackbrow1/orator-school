@@ -1,1 +1,86 @@
+@use "../global/mixins.scss" as m;
+@use "../global/variables.scss" as v;
 
+.header {
+  padding-top: 10px;
+}
+
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include m.wrapper-mobile;
+}
+
+.header__logo-container {
+  height: 50px;
+}
+
+.header__nav-list {
+  display: none;
+}
+
+.header__nav-button {
+  display: flex;
+  align-items: center;
+  width: 45px;
+  height: 40px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+
+  .header__nav-button-line {
+    display: block;
+    width: 45px;
+    height: 2px;
+    background-color: v.$text-color;
+  }
+
+  &--opened {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      height: 2px;
+      background-color: v.$text-color;
+    }
+
+    &::before {
+      right: 0;
+      top: 9px;
+      width: 28px;
+    }
+
+    &::after {
+      left: 0;
+      top: 29px;
+      width: 28px;
+    }
+  }
+
+  &--closed {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 19px;
+      right: 0;
+      width: 45px;
+      height: 2px;
+      background-color: v.$text-color;
+    }
+
+    &::before {
+      transform: rotate(30deg);
+    }
+
+    &::after {
+      transform: rotate(-30deg);
+    }
+  }
+}
+
+.header__contacts {
+  display: none;
+}

@@ -1,5 +1,6 @@
 @use './mixins' as m;
 
-@include m.font-template("Roboto", 400, normal, url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff"));
-@include m.font-template("Roboto", 300, normal, url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff"));
-@include m.font-template("Roboto", 700, normal, url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff"));
+@include m.font-template("Inter", 900, normal, url("../fonts/Inter18pt-Bold.woff2") format("woff2"), url("../fonts/Inter18pt-Bold.woff") format("woff"));
+@include m.font-template("Inter", 400, normal, url("../fonts/Inter18pt-Regular.woff2") format("woff2"), url("../fonts/Inter18pt-Regular.woff") format("woff"));
+@include m.font-template("Menorah", 800, normal, url("../fonts/MenorahGrotesk-Semi.woff2") format("woff2"), url("../fonts/MenorahGrotesk-Semi.woff") format("woff"));
+@include m.font-template("Menorah", 500, normal, url("../fonts/MenorahGrotesk-Medium.woff2") format("woff2"), url("../fonts/MenorahGrotesk-Medium.woff") format("woff"));
