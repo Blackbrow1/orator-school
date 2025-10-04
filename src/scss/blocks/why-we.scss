@@ -1,0 +1,37 @@
+@use "../global/mixins.scss" as m;
+@use "../global/variables.scss" as v;
+
+.why-we {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.why-we__wrap {
+  @include m.wrapper-mobile;
+}
+
+.why-we__title {
+  margin-bottom: 20px;
+}
+
+.why-we__list {
+  margin-bottom: 20px;
+}
+
+.why-we__item {
+  padding-top: 15px;
+  padding-bottom: 30px;
+  border-top: 1px solid v.$border-color;
+
+  &:last-of-type {
+    border-bottom: 1px solid v.$border-color;
+  }
+}
+
+.why-we__item-title {
+  margin-bottom: 10px;
+}
+
+.why-we__item-link {
+  display: none;
+}

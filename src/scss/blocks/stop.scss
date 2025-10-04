@@ -1,0 +1,34 @@
+@use "../global/variables.scss" as v;
+@use "../global/mixins.scss" as m;
+
+.stop {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background:
+  repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 8px,
+    v.$border-color 9px,
+    transparent 10px
+  );
+  background-size: 100% 19px;
+}
+
+.stop__wrap {
+  @include m.wrapper-mobile;
+}
+
+.stop__title {
+  margin-bottom: 15px;
+  font-family: v.$font-first;
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.stop__text {
+  padding-left: 90px;
+}
