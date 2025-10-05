@@ -1,0 +1,47 @@
+@use "../global/mixins.scss" as m;
+@use "../global/variables.scss" as v;
+
+.course-program {
+  padding-top: 60px;
+}
+
+.course-program__wrap {
+  @include m.wrapper-mobile;
+}
+
+.course-program__title {
+  margin-bottom: 20px;
+}
+
+.course-program__list {
+  margin-bottom: 20px;
+}
+
+.course-program__item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  border-top: 1px solid v.$border-color;
+
+  &:last-of-type {
+    border-bottom: 1px solid v.$border-color;
+  }
+}
+
+.course-program__item-title {
+  margin-bottom: 10px;
+}
+
+.course-program__item-module {
+  display: block;
+  font-family: v.$font-first;
+  font-weight: 800;
+  color: v.$border-color;
+}
+
+.course-program__button {
+  background-color: inherit;
+  border: 1px solid v.$accent-color;
+  color: v.$accent-color;
+}

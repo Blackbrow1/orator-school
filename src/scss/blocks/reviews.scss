@@ -1,0 +1,78 @@
+@use "../global/variables.scss" as v;
+@use "../global/mixins.scss" as m;
+
+.reviews {
+  padding-bottom: 60px;
+  background-color: v.$accent-color;
+  color: v.$basic-light;
+}
+
+.reviews__wrap {
+  @include m.wrapper-mobile;
+}
+
+.reviews__title {
+  margin-bottom: 20px;
+}
+
+.reviews__list {
+  margin-bottom: 20px;
+}
+
+.reviews__item {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  grid-template-rows: 55px 1fr;
+  gap: 20px 10px;
+  margin-left: 90px;
+  padding: 20px 20px 30px;
+  border: 1px solid v.$border-dark;
+  border-radius: 20px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}
+
+.reviews__item-img-block {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  background-color: v.$basic-light;
+  border: 2px solid v.$basic-light;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.reviews__item-title {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  font-family: v.$font-first;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.reviews__item-text {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+
+.reviews__write-us {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: v.$card-dark;
+  border-radius: 20px;
+  font-family: v.$font-first;
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.reviews__button {
+  background-color: v.$button-dark;
+}

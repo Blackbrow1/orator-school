@@ -1,0 +1,97 @@
+@use "../global/mixins.scss" as m;
+@use "../global/variables.scss" as v;
+
+.price {
+  padding-top: 60px;
+}
+
+.price__wrap {
+  @include m.wrapper-mobile;
+}
+
+.price__title {
+  margin-bottom: 20px;
+}
+
+.price__text {
+  margin-left: 90px;
+  margin-bottom: 20px;
+}
+
+.price__item {
+  padding: 30px 20px;
+  border-radius: 20px;
+
+  .price__item-price,
+  .price__item-old-price {
+    display: inline-block;
+  }
+
+  .price__item-price {
+    font-family: v.$font-first;
+    font-weight: 800;
+    line-height: 1;
+    font-size: 32px;
+  }
+
+  .price__item-item {
+    position: relative;
+    padding-left: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &--standart {
+    border: 1px solid v.$accent-color;
+
+    .price__item-item {
+      &::before {
+        background-color: v.$accent-color;
+      }
+    }
+  }
+
+  &--vip {
+    background: linear-gradient(133deg, #023e73 0%, #0475d9 100%);
+    color: v.$basic-light;
+
+    .price__item-item {
+      &::before {
+        background-color: v.$basic-light;
+      }
+    }
+  }
+}
+
+.price__item-title {
+  margin-bottom: 20px;
+}
+
+.price__item-list {
+  margin-bottom: 40px;
+}
+
+.price__item-new-price {
+  position: relative;
+  display: inline-block;
+  padding-right: 30px;
+}
+
+.price__item-rub--standart {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  fill: v.$accent-color;
+}
