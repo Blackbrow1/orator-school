@@ -1,0 +1,59 @@
+@use "../global/variables.scss" as v;
+@use "../global/mixins.scss" as m;
+
+.promo__container {
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 76px;
+  background-color: v.$second-accent-color;
+}
+
+.promo__wrap {
+  position: relative;
+  @include m.wrapper-mobile;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -56px;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: v.$basic-light;
+    mask: url("../../img/icons/stack.svg#star") repeat-x;
+    mask-size: 50px 50px;
+  }
+}
+
+.promo__button-wrap {
+  @include m.wrapper-mobile;
+}
+
+.promo__title {
+  display: none;
+}
+
+.promo__text {
+  font-family: v.$font-first;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.promo__price {
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: -18px;
+    width: 18px;
+    height: 18px;
+    background-color: v.$accent-color;
+    mask: url("../../img/icons/stack.svg#rub") no-repeat center;
+    mask-size: contain;
+  }
+}

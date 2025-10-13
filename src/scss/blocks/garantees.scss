@@ -1,0 +1,49 @@
+@use "../global/variables.scss" as v;
+@use "../global/mixins.scss" as m;
+
+.garantees {
+  padding-top: 60px;
+}
+
+.garantees__wrap {
+  @include m.wrapper-mobile;
+}
+
+.garantees__title {
+  margin-bottom: 20px;
+}
+
+.garantees__answer {
+  display: inline-block;
+  margin-left: 90px;
+  margin-bottom: 20px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 22px;
+  line-height: 1;
+  background-color: v.$second-accent-color;
+}
+
+.garantees__advanced-answer {
+  margin-left: 90px;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background-color: v.$accent-color;
+  color: v.$basic-light;
+}
+
+.garantees__advanced-answer-text-1 {
+  margin-bottom: 40px;
+}
+
+.garantees__advanced-answer-text-2 {
+  font-family: v.$font-first;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.garantees__img-block {
+  display: none;
+}

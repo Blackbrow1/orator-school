@@ -1,0 +1,45 @@
+@use "../global/variables.scss" as v;
+@use "../global/mixins.scss" as m;
+
+.faq {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.faq__wrap {
+  @include m.wrapper-mobile;
+}
+
+.faq__title {
+  margin-bottom: 20px;
+}
+
+.faq__item {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  border-top: 1px solid v.$border-color;
+
+  &:last-of-type {
+    border-bottom: 1px solid v.$border-color;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: v.$accent-color;
+  }
+}
+
+.faq__item-title {
+  margin-bottom: 15px;
+}
+
+.faq__item-text {
+  margin-left: 90px;
+}
