@@ -26,3 +26,97 @@
   margin-left: 90px;
   margin-bottom: 20px;
 }
+
+.main-form__input-name,
+.main-form__input-tel {
+  display: block;
+  margin-bottom: 10px;
+  padding-left: 18px;
+  width: 100%;
+  height: 52px;
+  border-radius: 15px;
+  font-family: v.$font-first;
+  font-size: 15px;
+  background-color: v.$basic-light;
+  color: v.$text-color;
+
+  &::placeholder {
+    color: v.$placeholder-color;
+  }
+}
+
+.main-form__button {
+  margin-bottom: 22px;
+  background-color: v.$button-dark;
+}
+
+.main-form__policy {
+  position: relative;
+  display: block;
+  margin-bottom: 44px;
+  padding-left: 24px;
+  font-size: 13px;
+  line-height: 1;
+
+  a {
+    position: relative;
+    color: v.$basic-light;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: v.$basic-light;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid v.$basic-light;
+    border-radius: 3px;
+  }
+}
+
+.main-form__input-policy:checked ~ .main-form__policy {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 10px;
+    height: 6px;
+    border-bottom: 1px solid v.$basic-light;
+    border-left: 1px solid v.$basic-light;
+    transform: rotate(-45deg);
+  }
+}
+
+.main-form__start-group {
+  padding: 30px 20px;
+  background-color: v.$card-dark;
+  border-radius: 20px;
+}
+
+.main-form__start-group-title {
+  margin-bottom: 20px;
+}
+
+.main-form__start-group-text {
+  margin-bottom: 10px;
+}
+
+.main-form__start-group-call {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background-color: v.$second-accent-color;
+  color: v.$text-color;
+}

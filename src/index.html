@@ -722,21 +722,23 @@
 
           <div class="main-form__form">
             <form action="#" method="post">
-              <input type="text" name="name" id="name" placeholder="Имя">
-              <input type="tel" name="tel" id="tel" placeholder="Телефон">
-              <button type="submit">Записаться на консультацию</button>
-            </form>
+              <input class="main-form__input-name" type="text" name="name" id="name" placeholder="Имя">
+              <input class="main-form__input-tel" type="tel" name="tel" id="tel" placeholder="Телефон">
+              <button class="main-form__button button" type="submit">Записаться на консультацию</button>
 
-            <span class="main-form__policy">
-              Согласие на обработку
-              <a href="#" download>персональных данных</a>
-            </span>
+              <input class="main-form__input-policy visually-hidden" type="checkbox" name="policy" id="policy" checked>
+
+              <label class="main-form__policy" for="policy">
+                Согласие на обработку
+                <a href="#" download>персональных данных</a>
+              </label>
+            </form>
           </div>
 
           <div class="main-form__start-group">
             <h3 class="main-form__start-group-title h3">
               Ближайший старт:
-              <span class="main-form__start-group-date">25 сентября</span>
+              <br><span class="main-form__start-group-date">25 сентября</span>
             </h3>
 
             <p class="main-form__start-group-text">Набор групп каждую неделю</p>
