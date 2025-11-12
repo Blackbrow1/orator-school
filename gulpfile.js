@@ -32,7 +32,7 @@ const sass = gulpSass(dartSass);
 const PATH_TO_SRC = './src/';
 const PATH_TO_DIST = './dist/';
 const PATH_TO_RAW = './raw/';
-const PATH_TO_ASSETS = './assets/';
+const PATH_TO_ASSETS = './src/assets/';
 // const PATHS_TO_STATIC = [
 //   `${PATH_TO_SRC}favicons/*.{png,svg}`,
 //   `!${PATH_TO_SRC}img/icons/**/*`
@@ -144,7 +144,10 @@ export function createStack () {
 }
 
 export function copyAssets () {
-  return src(PATHS_TO_STATIC)
+  return src(PATHS_TO_STATIC, {
+      encoding: false,
+      dot: true // разрешить копирование скрытых файлов
+    })
     .pipe(newer(PATH_TO_DIST))
     .pipe(dest(PATH_TO_DIST));
 }
